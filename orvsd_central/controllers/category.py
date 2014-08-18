@@ -67,10 +67,7 @@ def install_course():
         form = InstallCourse()
 
         # Query all moodle 2.2 courses
-        courses = g.db_session.query(CourseDetail).filter(
-            CourseDetail.moodle_version
-            .like('2.5%')
-            ).all()
+        courses = g.db_session.query(CourseDetail).all()
 
         # Query all moodle sites
         sites = g.db_session.query(Site).filter(
