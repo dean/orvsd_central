@@ -78,10 +78,7 @@ def install_course():
         # For all sites query the SiteDetail to see if it's a moodle 2.2 site
         for site in sites:
             details = g.db_session.query(SiteDetail).filter(
-                and_(
-                    SiteDetail.site_id == site.id,
-                    SiteDetail.siterelease.like('2.2%')
-                )
+                SiteDetail.site_id == site.id,
             ).order_by(SiteDetail.timemodified.desc()).first()
 
             if details is not None:
