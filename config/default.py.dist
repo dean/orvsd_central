@@ -34,3 +34,12 @@ REDIRECT_URI = "/oauth2callback"
 CELERY_BROKER_URL = 'sqla+sqlite:///'
 CELERY_RESULT_BACKEND = 'database'
 CELERY_RESULT_DBURI = 'sqlite:///'
+
+# install_course_to_site config info
+CATEGORY: '1'
+FIRSTNAME: 'orvsd'
+LASTNAME: 'central'
+CITY: 'none'
+USERNAME: 'admin'
+EMAIL: 'a@a.aa'
+PASS: 'adminpass'
