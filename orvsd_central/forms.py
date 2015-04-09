@@ -3,6 +3,7 @@ from flask.ext.wtf import (DateTimeField, Email, Form, PasswordField, Required,
 
 defaults = [('None', '---')]
 
+
 class LoginForm(Form):
     """
     Login form.
@@ -48,6 +49,7 @@ class DistrictForm(Form):
     state_id = SelectField(
         u"Associated State", validators=[Required()], choices=defaults
     )
+
 
 class SchoolForm(Form):
     """
@@ -113,4 +115,3 @@ class CourseForm(Form):
     state_id = SelectField(
         u"Associated State", validators=[Required()], choices=defaults
     )
-
