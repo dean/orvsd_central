@@ -212,6 +212,20 @@ def get_object(category, id):
     abort(404)
 
 
+@mod.route("/<category>/names", methods=["GET"])
+def get_names(category):
+    """
+    Returns a list of id:name key/value pairs for a category.
+    """
+    obj = get_obj_by_category(category)
+    if obj:
+        objs = g.db_session.query(obj.id, obj.name).all()
+        if objs:
+            return jsonify(objs)
+
+    abort(404)
+
+
 @mod.route('/report/get_active_schools', methods=['GET'])
 def get_active_schools():
     """
